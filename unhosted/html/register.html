@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>My Unhosted node</title>
+<link rel="stylesheet" href="css/uncompressed/reset.css" />
+<link rel="stylesheet" href="css/uncompressed/text.css" />
+<link rel="stylesheet" href="general.css" />
+<link rel="stylesheet" href="css/uncompressed/login.css" />
+
+<script type="text/javascript" src="js/settings.js.php"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+
+</head>
+<body>
+	<h1><strong class="unhostedSettings_domain"></strong> Unhosted storage node</h1>
+
+	<h2>Welcome developer of unhosted web apps!</h2>
+	<p>You can register here for a free test account, so you can quickly test and debug your unhosted web app.</p>
+	<div id="error"></div>
+	<div id="success">
+		<h2>Great!</h2>
+		<p>You now have an unhosted account at <span class="user_name"></span>@<span class="unhostedSettings_domain"></span>.</p>
+		<p class="redirect"><a href="#">Click here to return to the app you were logging into.</a></p>
+	</div>
+	<form id="register">
+		<table>
+		<tr><td align="right">Nick:</td><td align="left">
+			<input id="user_name" type="text">@<span class="unhostedSettings_domain"></span></td></tr>
+		<tr><td align="right">Password:</td><td align="left">
+			<input id="pwd" type="password"></td></tr>
+		<tr><td align="right">Repeat:</td><td align="left">
+			<input id="pwd2" type="password"></td></tr>
+		<tr><td></td><td align="left">
+		<input type="submit" value="Register">
+		</td></tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -7,3 +7,4 @@ if(!file_exists($unhostedIncludes . '/settings.php')) {
 }
 
 require_once($unhostedIncludes . '/settings.php');
+require_once($unhostedIncludes . '/Unhosted.class.php');

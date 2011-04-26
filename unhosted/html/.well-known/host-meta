@@ -7,7 +7,7 @@
     <Title>Resource Descriptor</Title>
   </Link>
   <Link rel='register' 
-        template='http://dev.unhosted.org/register.php?user_name={uri}&redirect_url={redirect_url}'>
+        template='http://dev.unhosted.org/register.html?user_name={uri}&redirect_url={redirect_url}'>
     <Title>Resource Descriptor</Title>
   </Link>
 </XRD>

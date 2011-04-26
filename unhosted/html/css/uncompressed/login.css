@@ -1,3 +1,26 @@
+
+#error {
+	padding: 6px;
+	background-color: orange;
+	border-radius: 3px;
+	font-weight: bold;
+	display: none;
+	color: black;
+}
+
+#success {
+	padding: 6px;
+	background-color: #9acd32;
+	border-radius: 3px;
+	font-weight: bold;
+	display: none;
+	color: black;
+}
+
+#success>p.redirect {
+	display: none;
+}
+
 body{
 	font-family: Helvetica, Arial, sans-serif;
 	background: #202429;
