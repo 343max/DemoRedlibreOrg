@@ -11,8 +11,9 @@ class Unhosted {
 	}
 
 	public static function normalizeScopeName($scope) {
-		return preg_replace("/[^a-z0-9\\._]/", '', strtolower($scope));
+		return preg_replace("/[^a-z0-9\\._-]/", '', strtolower($scope));
 	}
+
 
 	public static function registerUser($userName, $password) {
 		if(!ctype_alnum($userName)) {
@@ -30,7 +31,7 @@ class Unhosted {
 
 	public static function validUser($userId, $password) {
 		$pwdFile =  self::getUserDavPath($userId) . ".htpasswd";
-		return (file_exists($pwdFile) && sha1($password)==file_get_contents($pwdFile));
+		return (file_exists($pwdFile) && sha1($password) == file_get_contents($pwdFile));
 	}
 
 	public static function getUserDavPath($userId) {
@@ -42,12 +43,13 @@ class Unhosted {
 	public static function getScopeDavPath($userId, $scope) {
 		$normalizedScope = self::normalizeScopeName($scope);
 		if($normalizedScope == '') throw new Exception('No scope given', 4);
-		return self::getUserDavPath($userId) . $normalizedScope;
+		return self::getUserDavPath($userId) . $normalizedScope . '/';
 	}
-
+	
 	public static function registerScope($userId, $password, $scope) {
+
 		if(!self::validUser($userId, $password)) {
-			throw new Exception("Wrong password!", 3);
+			throw new Exception("The password is wrong or this user does not exists.", 3);
 		}
 
 		$token = base64_encode(mt_rand());

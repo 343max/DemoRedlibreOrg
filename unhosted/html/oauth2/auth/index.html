@@ -9,15 +9,22 @@
 <link rel="stylesheet" href="/general.css" />
 <link rel="stylesheet" href="/css/uncompressed/login.css" />
 
+<script type="text/javascript" src="../../js/settings.js.php"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/util.js"></script>
+<script type="text/javascript" src="../../js/compartment.js"></script>
 <script type="text/javascript" src="../../js/autheticate.js"></script>
 
 </head>
 <body>
 	<h1><strong><?php echo UnhostedSettings::domain ?> </strong>Unhosted storage node</h1>
 	<div class="content">
-		<h2>The app '<span class="client_id"></span>' wants to read and write the <span class="scope"></span> data in your unhosted account</h2>
+		<h2>The app '<span class="client_id"></span>' wants to read and write the <span class="scope"></span> data in your unhosted account.</h2>
+		<h2 class="accessCompartment">Also it wants to read and write the data in your shared compartment &quot;<span class="compartment"></span>&quot;.</h2>
+		<div class="compartmentInfo">
+
+			
+		</div>
 		<form id="allow">
 			<label>Username:</label><span class="username user_name"></span>
 			<label for="password">Password:</label>

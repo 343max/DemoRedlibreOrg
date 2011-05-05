@@ -1,6 +1,6 @@
 <?php
 
-require_once('unhosted_includes/init.php');
+require_once('../unhosted_includes/init.php');
 
 try {
 	$result = array();
@@ -26,5 +26,3 @@ try {
 		'errorMessage' => $exception->getMessage()
 	)));
 }
-
-?>

@@ -5,7 +5,8 @@ $('#allow').live('submit', function(event) {
 	var params = {
 		pwd: $('#pwd').val(),
 		user_name: document.location.searchParameter('user_name'),
-		scope: document.location.searchParameter('scope')
+		scope: document.location.searchParameter('scope'),
+		sharedCompartment: document.location.searchParameter('compartment')
 	}
 
 	errorMessage();

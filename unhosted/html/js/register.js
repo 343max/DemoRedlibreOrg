@@ -36,7 +36,7 @@ $('#register').live('submit', function(event) {
 
 	$('#pwd,#pwd2').val('');
 
-	$.post('register.php', params, function(data) {
+	$.post('unhosted_ajax/register.php', params, function(data) {
 		if(data.error) {
 			$('#error').text(data.errorMessage).show();
 		} else {
