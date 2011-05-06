@@ -11,7 +11,7 @@ class Unhosted {
 	}
 
 	public static function normalizeScopeName($scope) {
-		return preg_replace("/[^a-z0-9\\._-]/", '', strtolower($scope));
+		return preg_replace("/[^a-z0-9\\._-]/", '', $scope);
 	}
 
 
