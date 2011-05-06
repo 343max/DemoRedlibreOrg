@@ -27,7 +27,7 @@ class Unhosted_SharedCompartment {
 	}
 
 	private function getInfoFilePath() {
-		return $this->getMasterPath() . '/.info.json';
+		return $this->getMasterPath() . '/.htinfo.json';
 	}
 
 	public function readInfo() {
