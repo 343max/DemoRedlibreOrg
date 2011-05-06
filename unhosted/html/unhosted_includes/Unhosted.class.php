@@ -59,16 +59,18 @@ class Unhosted {
 			mkdir($scopeDir);
 		}
 
+		$passwdFilePath = $scopeDir . '.htpasswd';
+
 		$htaccessContent = '<LimitExcept OPTIONS HEAD GET>
-		  AuthType Basic
-		  AuthName "http://unhosted.org/spec/dav/0.1"
-		  Require valid-user
-		  AuthUserFile /var/www/tabulatabs.com/dav/tabulatabs.com/343max/tabulatabs.com/.htpasswd
-		</LimitExcept>';
+  AuthType Basic
+  AuthName "http://unhosted.org/spec/dav/0.1"
+  Require valid-user
+  AuthUserFile ' . $passwdFilePath . '
+</LimitExcept>';
 
-		file_put_contents($scopeDir . '/.htaccess', $htaccessContent);
+		file_put_contents($scopeDir . '.htaccess', $htaccessContent);
 
-		`htpasswd -bc $scopeDir/.htpasswd $userId $token`;
+		`htpasswd -bc $passwdFilePath $userId $token`;
 
 		return $token;
 	}
