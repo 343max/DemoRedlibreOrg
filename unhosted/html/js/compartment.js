@@ -1,11 +1,16 @@
 $().ready(function() {
-	var compartment = document.location.searchParameter('compartment');
+	var scope = document.location.searchParameter('scope');
+	var compartment = '';
+	scope = scope.replace(/\/(.*)/, function(match, c) {
+		compartment = c;
+	});
+
 	if(!compartment) return;
 
 	var params = {
 		user_name: document.location.searchParameter('user_name'),
 		scope: document.location.searchParameter('scope'),
-		sharedCompartment: document.location.searchParameter('compartment')
+		sharedCompartment: compartment
 	};
 
 	var infoBox = $('.compartmentInfo');

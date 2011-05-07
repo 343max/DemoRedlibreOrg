@@ -2,11 +2,17 @@
 $('#allow').live('submit', function(event) {
 	event.preventDefault();
 
+	var scope = document.location.searchParameter('scope');
+	var compartment = '';
+	scope = scope.replace(/\/(.*)/, function(match, c) {
+		compartment = c;
+	});
+
 	var params = {
 		pwd: $('#pwd').val(),
 		user_name: document.location.searchParameter('user_name'),
-		scope: document.location.searchParameter('scope'),
-		sharedCompartment: document.location.searchParameter('compartment')
+		scope: scope,
+		sharedCompartment: compartment
 	}
 
 	errorMessage();
